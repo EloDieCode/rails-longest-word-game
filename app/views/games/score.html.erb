@@ -1,0 +1,24 @@
+<!-- A page receiving this form, computing the user score and displaying it. -->
+<h1>Now your results</h1>
+
+<p>Your word:</p>
+
+
+<% if @included %>
+  <% if @english_word %>
+    <p><strong>Congratulations!</strong> <%= @answer %> is a valid English word!</p>
+  <% else %>
+    <p>Sorry but <strong><%= @answer %></strong> does not seem to be a valid English word...</p>
+  <% end %>
+<% else %>
+  <p>Sorry but <strong><%= @answer %></strong> can't be built out of <%= @letters.join(", ") %></p>
+<% end %>
+
+<!-- <p>Time Taken to answer: </p>
+<p>Message : </p>
+ -->
+</br>
+
+
+
+<%= link_to "Play again", new_path %>
